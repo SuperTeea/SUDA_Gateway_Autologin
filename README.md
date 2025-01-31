@@ -39,4 +39,4 @@ vendor = "中国电信" # 一定要完全对应网关提供的选项。(例如"�
 
 如果有好的改进想法欢迎各位大佬提供~ 没有测试过所有可能情况,有BUG也欢迎大家提!我菜菜轻喷QAQ
 
-猜猜那个 $\mathfrak{S}\mathfrak{O}\mathfrak{D}$ 的 $\mathfrak{Y} \mathfrak{V} \mathfrak{A} \mathfrak{N}$ 是谁 AWA
+猜猜那个 $\mathfrak{G}\mathfrak{O}\mathfrak{D}$ 的 $\mathfrak{Y} \mathfrak{U} \mathfrak{A} \mathfrak{N}$ 是谁 AWA
