@@ -7,6 +7,7 @@ import selenium.webdriver
 import tomllib
 import os
 import time
+import sys
 
 # 没有使用toml的默认配置
 usr = 'your username'
@@ -23,14 +24,15 @@ if os.path.exists(os.path.join(os.path.dirname(__file__),"login.toml")):
 else:
     print(f"使用默认的用户和密码, 如需要请在 {os.path.dirname(__file__)} 下创建login.toml,格式见README.md")
 
-driver = selenium.webdriver.Edge() # 一般Edge大家电脑都有，如果想用其他的自己更换
+# 一般Edge / Firefox 大家电脑都有，如果想用其他的自己更换
+driver = selenium.webdriver.Firefox() if sys.platform.startswith('linux') else selenium.webdriver.Edge()
 try:
     driver.get(gateway)
     
     # 如果已经登录 就退出 (通过看title判断)
     if driver.title != "上网登录页":
         print("已经登录!")
-        quit()
+        quit(2)
 
     # 找到运营商选框，并按填写的运营商选择
     sel = Select(driver.find_element(By.NAME, r"ISP_select"))
@@ -55,8 +57,10 @@ try:
     print(driver.title)
     if driver.title != "注销页":
         print("登录失败!")
+        quit(1)
     else:
         print("登录成功!")
+        quit(0)
     
 finally:
     driver.quit()
